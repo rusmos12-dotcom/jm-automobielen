@@ -1,0 +1,372 @@
+{
+  "last_updated": "2026-03-29T15:30:00Z",
+  "profile": {
+    "name": "JM Automobielen",
+    "bio": "RDW erkend autobedrijf in Hoogkarspel. Voor in/verkoop en licht onderhoud. Polijsten, coaten, interieur...",
+    "followers": 235,
+    "posts_count": 75,
+    "location": "Hoogkarspel, Netherlands"
+  },
+  "posts": [
+    {
+      "id": "DN8yINDDL0z",
+      "type": "post",
+      "category": "verkocht",
+      "caption": "De polo was nog niet eens klaar en stond nog niet online, tot dat ik een berichtje kreeg van me maat dat ie een autotje zocht met airco, cruise en 5 deuren, het liefst iets van een polo. Toeval bestaat niet maar die stond bij mij. Heel veel veilige kilometers en plezier ermee vriend!",
+      "date": "2025-08-29",
+      "image_url": "https://www.instagram.com/p/DN8yINDDL0z/media/?size=l",
+      "car_info": {
+        "make": "Volkswagen",
+        "model": "Polo",
+        "body_type": "5-door",
+        "features": ["airco", "cruise control"]
+      },
+      "customer": "friend",
+      "notes": "sold to friend"
+    },
+    {
+      "id": "DN8dgxaDEJ0",
+      "type": "post",
+      "category": "bedrijf",
+      "caption": "Heel erg blij met de nieuwe spullen precies zoals ik het in gedachten had. Op naar nog meer tevreden klanten.",
+      "date": "2025-08-29",
+      "image_url": "https://www.instagram.com/p/DN8dgxaDEJ0/media/?size=l"
+    },
+    {
+      "id": "DN3izJuWNqe",
+      "type": "post",
+      "category": "verkocht",
+      "caption": "Polo bijna klaar voor afleveren! Stuurtje stond nog een beetje scheef, dus om hem keurig af te leveren nog even laten uitlijnen bij Laan Banden in Hoogkarspel, super service en fijn contact, tot de volgende keer",
+      "date": "2025-08-27",
+      "image_url": "https://www.instagram.com/p/DN3izJuWNqe/media/?size=l",
+      "car_info": {
+        "make": "Volkswagen",
+        "model": "Polo"
+      },
+      "service": "wheel_alignment"
+    },
+    {
+      "id": "DN1DrGJ2ARg",
+      "type": "post",
+      "category": "te_koop",
+      "caption": "Volkswagen Polo 1.0 MPI Trendline 5 deurs (2018) met slechts 89.000km op de teller! Lekker compacte auto met airco, cruise control, en zuinige 1.0 motor. Te koop voor €8.750",
+      "date": "2025-08-26",
+      "image_url": "https://www.instagram.com/p/DN1DrGJ2ARg/media/?size=l",
+      "car_info": {
+        "make": "Volkswagen",
+        "model": "Polo",
+        "trim": "Trendline",
+        "year": 2018,
+        "engine": "1.0 MPI",
+        "body_type": "5-door",
+        "km": 89000,
+        "price_eur": 8750,
+        "features": ["airco", "cruise control", "fuel efficient"]
+      }
+    },
+    {
+      "id": "DNvTQBC2KWE",
+      "type": "post",
+      "category": "detailing",
+      "caption": "Peugeot 206+ was toe aan een frisse schoonmaakbeurt — even lekker door de wasstraat en daarna de binnenkant grondig aangepakt. Stofzuiger erin, dashboard schoon, ramen streeploos",
+      "date": "2025-08-23",
+      "image_url": "https://www.instagram.com/p/DNvTQBC2KWE/media/?size=l",
+      "car_info": {
+        "make": "Peugeot",
+        "model": "206+"
+      },
+      "services": ["car wash", "interior cleaning", "dashboard cleaning", "window cleaning"]
+    },
+    {
+      "id": "DNcwIonMX5r",
+      "type": "post",
+      "category": "review",
+      "caption": "Customer review/collaboration",
+      "date": "2025-08-12",
+      "image_url": "https://www.instagram.com/p/DNcwIonMX5r/media/?size=l"
+    },
+    {
+      "id": "DMqAWm9C7Rm",
+      "type": "post",
+      "category": "te_koop",
+      "caption": "Te koop Ford Focus 1.0 EcoBoost Trend uit 2015 met 156.000km. Nette auto, goed onderhouden. €7.950",
+      "date": "2025-08-02",
+      "image_url": "https://www.instagram.com/p/DMqAWm9C7Rm/media/?size=l",
+      "car_info": {
+        "make": "Ford",
+        "model": "Focus",
+        "trim": "Trend",
+        "year": 2015,
+        "engine": "1.0 EcoBoost",
+        "km": 156000,
+        "price_eur": 7950,
+        "condition": "well maintained"
+      }
+    },
+    {
+      "id": "DMnniupMhYL",
+      "type": "post",
+      "category": "detailing",
+      "caption": "Een hele dikke Audi RS3, die van binnen wel wat aandacht kon gebruiken! Auto kwam voor een complete interieur behandeling en een ozon behandeling om weer een neutrale geur te krijgen in de auto. Het leer is nu niet meer glimmend zwart maar mooi mat zoals het hoort! Vloermatten gereinigd tot in de hoekjes...",
+      "date": "2025-07-27",
+      "image_url": "https://www.instagram.com/p/DMnniupMhYL/media/?size=l",
+      "car_info": {
+        "make": "Audi",
+        "model": "RS3"
+      },
+      "services": ["interior detailing", "ozone treatment", "leather restoration", "floor mat cleaning"]
+    },
+    {
+      "id": "DMk41Ixi7I2",
+      "type": "post",
+      "category": "verkocht",
+      "caption": "Donderdagavond te koop gezet, vrijdagmiddag verkocht. Renault Twingo",
+      "date": "2025-07-26",
+      "image_url": "https://www.instagram.com/p/DMk41Ixi7I2/media/?size=l",
+      "car_info": {
+        "make": "Renault",
+        "model": "Twingo"
+      },
+      "notes": "sold within 24 hours"
+    },
+    {
+      "id": "DMgSqrntdp7",
+      "type": "post",
+      "category": "te_koop",
+      "caption": "Leuke nette Renault Twingo te koop! €1750",
+      "date": "2025-07-24",
+      "image_url": "https://www.instagram.com/p/DMgSqrntdp7/media/?size=l",
+      "car_info": {
+        "make": "Renault",
+        "model": "Twingo",
+        "price_eur": 1750
+      }
+    },
+    {
+      "id": "DLpXZcmMeOm",
+      "type": "post",
+      "category": "review",
+      "caption": "Customer review/testimonial",
+      "date": "2025-07-05",
+      "image_url": "https://www.instagram.com/p/DLpXZcmMeOm/media/?size=l"
+    },
+    {
+      "id": "DLicYD7M8lG",
+      "type": "post",
+      "category": "detailing",
+      "caption": "Detailing work on a car",
+      "date": "2025-07-02",
+      "image_url": "https://www.instagram.com/p/DLicYD7M8lG/media/?size=l"
+    },
+    {
+      "id": "DLA56wWsvaq",
+      "type": "post",
+      "category": "bedrijf",
+      "caption": "Business/company milestone",
+      "date": "2025-06-22",
+      "image_url": "https://www.instagram.com/p/DLA56wWsvaq/media/?size=l"
+    },
+    {
+      "id": "DK7I766MOD1",
+      "type": "post",
+      "category": "te_koop",
+      "caption": "Te koop een nette Seat Ibiza uit 2011",
+      "date": "2025-06-15",
+      "image_url": "https://www.instagram.com/p/DK7I766MOD1/media/?size=l",
+      "car_info": {
+        "make": "Seat",
+        "model": "Ibiza",
+        "year": 2011
+      }
+    },
+    {
+      "id": "DK6xOqmsmGj",
+      "type": "post",
+      "category": "te_koop",
+      "caption": "Te koop bij JM Automobielen deze superleuke nette Lupo uit 2004 met maar 151.766 km! voor €1500",
+      "date": "2025-06-15",
+      "image_url": "https://www.instagram.com/p/DK6xOqmsmGj/media/?size=l",
+      "car_info": {
+        "make": "Volkswagen",
+        "model": "Lupo",
+        "year": 2004,
+        "km": 151766,
+        "price_eur": 1500
+      }
+    },
+    {
+      "id": "DKusAGWMeki",
+      "type": "post",
+      "category": "te_koop",
+      "caption": "Te koop in consignatie bij JM Automobielen Hoogkarspel, een zeer nette, goed onderhouden Peugeot",
+      "date": "2025-06-10",
+      "image_url": "https://www.instagram.com/p/DKusAGWMeki/media/?size=l",
+      "car_info": {
+        "make": "Peugeot"
+      },
+      "type_sale": "consignment"
+    },
+    {
+      "id": "DKZ63BSsxJy",
+      "type": "post",
+      "category": "verkocht",
+      "caption": "En ook de twingo mag het pad verlaten. Valentijn heeft nog maar net zijn rijbewijs",
+      "date": "2025-06-02",
+      "image_url": "https://www.instagram.com/p/DKZ63BSsxJy/media/?size=l",
+      "car_info": {
+        "make": "Renault",
+        "model": "Twingo"
+      },
+      "customer": "Valentijn",
+      "notes": "sold to new driver"
+    },
+    {
+      "id": "DKKuuoasCTX",
+      "type": "post",
+      "category": "verkocht",
+      "caption": "En daar gaat de Seat, verkocht aan Sil, die een grotere auto zocht voor zijn DJ werk",
+      "date": "2025-05-27",
+      "image_url": "https://www.instagram.com/p/DKKuuoasCTX/media/?size=l",
+      "car_info": {
+        "make": "Seat"
+      },
+      "customer": "Sil",
+      "notes": "sold for DJ work"
+    },
+    {
+      "id": "DKIaGzwsnMz",
+      "type": "post",
+      "category": "detailing",
+      "caption": "Vorig jaar mijn daily aangepakt, gekocht als een vieze oude golf. Veel krassen, swirls en oud vuil. Begonnen met het kleien van de auto...",
+      "date": "2025-05-26",
+      "image_url": "https://www.instagram.com/p/DKIaGzwsnMz/media/?size=l",
+      "car_info": {
+        "make": "Volkswagen",
+        "model": "Golf"
+      },
+      "services": ["clay bar treatment", "scratch removal", "swirl removal", "deep cleaning"]
+    },
+    {
+      "id": "DKAQjTQMKJZ",
+      "type": "post",
+      "category": "te_koop",
+      "caption": "En deze prachtige in nieuwstaat Seat Ibiza 1.2 uit 2011 met maar 49.513 km! 1e eigenaar en dealer onderhouden",
+      "date": "2025-05-23",
+      "image_url": "https://www.instagram.com/p/DKAQjTQMKJZ/media/?size=l",
+      "car_info": {
+        "make": "Seat",
+        "model": "Ibiza",
+        "year": 2011,
+        "engine": "1.2",
+        "km": 49513,
+        "condition": "like new",
+        "owner_history": "first owner, dealer serviced"
+      }
+    },
+    {
+      "id": "DKAP8flstmV",
+      "type": "post",
+      "category": "te_koop",
+      "caption": "En weer een superleuke kleine franse Twingo te koop! Met maar 107.000 km. Vraagprijs: € 1750",
+      "date": "2025-05-23",
+      "image_url": "https://www.instagram.com/p/DKAP8flstmV/media/?size=l",
+      "car_info": {
+        "make": "Renault",
+        "model": "Twingo",
+        "km": 107000,
+        "price_eur": 1750
+      }
+    },
+    {
+      "id": "DJ-P6v5M2eT",
+      "type": "post",
+      "category": "detailing",
+      "caption": "Het lijkt vaak erger dan dat het is! Maar met een beetje geduld en polijst werk is er nog een hoop schade vaak weg te halen",
+      "date": "2025-05-22",
+      "image_url": "https://www.instagram.com/p/DJ-P6v5M2eT/media/?size=l",
+      "services": ["polishing", "scratch removal", "damage repair"]
+    },
+    {
+      "id": "DJ-NRs-sYml",
+      "type": "post",
+      "category": "detailing",
+      "caption": "Wat een verschil kunnen schone ramen geven, na verschillende...",
+      "date": "2025-05-22",
+      "image_url": "https://www.instagram.com/p/DJ-NRs-sYml/media/?size=l",
+      "services": ["window cleaning"]
+    },
+    {
+      "id": "DJxLnnOMrcz",
+      "type": "post",
+      "category": "review",
+      "caption": "Customer review/testimonial",
+      "date": null,
+      "image_url": "https://www.instagram.com/p/DJxLnnOMrcz/media/?size=l"
+    },
+    {
+      "id": "DJw_Mmzsu2F",
+      "type": "post",
+      "category": "detailing",
+      "caption": "Ook voor het polijsten van lampen kun je bij mij terecht! Bij hele erge verweerde koplampen...",
+      "date": "2025-05-17",
+      "image_url": "https://www.instagram.com/p/DJw_Mmzsu2F/media/?size=l",
+      "services": ["headlight polishing", "headlight restoration"]
+    },
+    {
+      "id": "DJuvxo7MdhV",
+      "type": "post",
+      "category": "detailing",
+      "caption": "Vorig jaar de auto volledig gepolijst en in een menzerna polymeer sealing gezet. Deze bescherming houdt het ongeveer 3/6 maanden vol...",
+      "date": "2025-05-16",
+      "image_url": "https://www.instagram.com/p/DJuvxo7MdhV/media/?size=l",
+      "services": ["full polish", "polymer coating", "menzerna sealing"]
+    },
+    {
+      "id": "DJutWowsLD0",
+      "type": "post",
+      "category": "reparatie",
+      "caption": "Super mooie Fiesta ST line op de brug",
+      "date": "2025-05-16",
+      "image_url": "https://www.instagram.com/p/DJutWowsLD0/media/?size=l",
+      "car_info": {
+        "make": "Ford",
+        "model": "Fiesta",
+        "trim": "ST line"
+      },
+      "notes": "on lift for service"
+    },
+    {
+      "id": "DJusmVzMLNi",
+      "type": "post",
+      "category": "verkocht",
+      "caption": "De eerste verkoop van JM automobielen was vorige week een feit, de auto gaat zijn leven verder in Heerhugowaard bij een beginnend chauffeur",
+      "date": "2025-05-16",
+      "image_url": "https://www.instagram.com/p/DJusmVzMLNi/media/?size=l",
+      "notes": "first sale of JM Automobielen, sold to new driver in Heerhugowaard"
+    }
+  ],
+  "categories": {
+    "te_koop": "Cars for sale",
+    "verkocht": "Cars sold",
+    "detailing": "Detailing & polishing services",
+    "reparatie": "Repairs & maintenance",
+    "review": "Customer reviews & testimonials",
+    "bedrijf": "Business updates",
+    "overig": "Other"
+  },
+  "statistics": {
+    "total_posts": 28,
+    "by_category": {
+      "te_koop": 10,
+      "verkocht": 7,
+      "detailing": 8,
+      "reparatie": 1,
+      "review": 3,
+      "bedrijf": 2
+    },
+    "date_range": {
+      "oldest": "2025-05-16",
+      "newest": "2025-08-29"
+    }
+  }
+}

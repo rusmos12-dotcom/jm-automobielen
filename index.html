@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JM Automobielen - RDW erkend autobedrijf in Hoogkarspel. In- en verkoop, professionele detailing.">
+    <title>JM Automobielen | Autobedrijf Hoogkarspel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --dark: #111111;
+            --card: #161616;
+            --card-hover: #1c1c1c;
+            --teal: #5a9a96;
+            --teal-dark: #3d7a76;
+            --teal-glow: rgba(90,154,150,0.15);
+            --cream: #e8d5b5;
+            --cream-light: #f2ead8;
+            --cream-muted: #b8a88a;
+            --text: #c8c0b4;
+            --text-muted: #787068;
+            --border: #252525;
+            --border-accent: #3d7a76;
+            --red-sold: #c0392b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--black);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Typography ── */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            color: var(--cream);
+            font-weight: 600;
+        }
+
+        /* ── Header ── */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-link img {
+            height: 48px;
+            width: 48px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            color: var(--cream);
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            color: var(--teal);
+        }
+
+        nav { display: flex; gap: 1.8rem; }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover { color: var(--cream); }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--cream);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .header-inner { padding: 0.8rem 1.2rem; }
+            .hamburger { display: block; }
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10,10,10,0.98);
+                flex-direction: column;
+                padding: 1rem 2rem 1.5rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--border);
+            }
+            nav.open { display: flex; }
+            .logo-text { font-size: 1.1rem; }
+        }
+
+        /* ── Hero ── */
+        .hero {
+            position: relative;
+            padding: 100px 2rem 90px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 50% at 50% 40%, var(--teal-glow), transparent);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .hero-logo {
+            width: 140px;
+            height: 140px;
+            border-radius: 16px;
+            margin: 0 auto 2rem;
+            display: block;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span { color: var(--teal); }
+
+        .hero-tagline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--cream-muted);
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.82rem;
+            color: var(--text);
+        }
+
+        .hero-badge .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--teal);
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            padding: 14px 36px;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            color: var(--black);
+        }
+
+        .btn-primary:hover {
+            background: var(--teal-dark);
+            box-shadow: 0 0 30px var(--teal-glow);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--cream);
+            border: 1px solid var(--border-accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--teal-glow);
+            border-color: var(--teal);
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 60px 1.2rem 50px; }
+            .hero h1 { font-size: 2rem; }
+            .hero-logo { width: 100px; height: 100px; }
+        }
+
+        /* ── Sections ── */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .divider {
+            width: 50px;
+            height: 2px;
+            background: var(--teal);
+            margin: 1rem auto 0;
+        }
+
+        .section-alt {
+            background: var(--dark);
+        }
+
+        @media (max-width: 768px) {
+            .section { padding: 50px 1.2rem; }
+            .section-header h2 { font-size: 1.7rem; }
+        }
+
+        /* ── Card Grid ── */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── Car Card ── */
+        .car-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .car-card:hover {
+            border-color: var(--teal-dark);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 0 1px var(--teal-dark);
+        }
+
+        .car-card-img {
+            position: relative;
+            height: 210px;
+            overflow: hidden;
+            background: #1a1a1a;
+        }
+
+        .car-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .car-card:hover .car-card-img img { transform: scale(1.05); }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 5px 14px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge-te-koop {
+            background: var(--teal);
+            color: var(--black);
+        }
+
+        .badge-verkocht {
+            background: var(--red-sold);
+            color: #fff;
+        }
+
+        .badge-detailing {
+            background: var(--cream-muted);
+            color: var(--black);
+        }
+
+        .car-card-body {
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .car-card-body h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .car-card-body .specs {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        .plate {
+            display: inline-block;
+            background: #f5c518;
+            color: #000;
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 3px 10px;
+            border-radius: 3px;
+            letter-spacing: 1.5px;
+            margin: 0.6rem 0;
+        }
+
+        .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            color: var(--cream);
+            font-weight: 600;
+            margin-top: auto;
+            padding-top: 0.8rem;
+        }
+
+        .price-sold {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* ── Detailing Card ── */
+        .detail-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.35s ease;
+        }
+
+        .detail-card:hover {
+            border-color: var(--teal-dark);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+        }
+
+        .detail-card-img {
+            height: 260px;
+            overflow: hidden;
+            background: #1a1a1a;
+        }
+
+        .detail-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .detail-card:hover .detail-card-img img { transform: scale(1.05); }
+
+        .detail-card-body {
+            padding: 1.4rem;
+        }
+
+        .detail-card-body h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .detail-card-body p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .detail-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.8rem;
+        }
+
+        .tag {
+            background: rgba(90,154,150,0.1);
+            border: 1px solid rgba(90,154,150,0.2);
+            color: var(--teal);
+            font-size: 0.72rem;
+            padding: 3px 10px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Review Card ── */
+        .review-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.35s ease;
+        }
+
+        .review-card:hover { border-color: var(--teal-dark); }
+
+        .review-stars {
+            color: var(--cream);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--cream-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        .review-author {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* ── About ── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .about-block h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--teal);
+        }
+
+        .about-block p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .features-list li {
+            padding: 0.6rem 0 0.6rem 1.8rem;
+            position: relative;
+            color: var(--text);
+            font-size: 0.92rem;
+        }
+
+        .features-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--teal);
+        }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        /* ── Contact ── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+
+        .contact-item:hover { border-color: var(--teal-dark); }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-item h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p, .contact-item a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover { color: var(--teal); }
+
+        /* ── Footer ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 2rem 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
+        footer .footer-brand {
+            font-family: 'Playfair Display', serif;
+            color: var(--cream-muted);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+
+        footer a:hover { color: var(--cream); }
+
+        .footer-sep {
+            width: 30px;
+            height: 1px;
+            background: var(--border);
+            margin: 1rem auto;
+        }
+
+        /* ── Empty State ── */
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-muted);
+        }
+
+        .empty-state h3 {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 0.3rem;
+        }
+
+        /* ── Placeholder image ── */
+        .placeholder-img {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1a1a1a;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ── Carousel dots ── */
+        .carousel-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+
+        .carousel-dots .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+        }
+
+        .carousel-dots .dot.active {
+            background: var(--cream);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#hero" class="logo-link">
+                <img src="data/logo.png" alt="JM Automobielen" onerror="this.style.display='none'">
+                <div class="logo-text">JM <span>Automobielen</span></div>
+            </a>
+            <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+            <nav>
+                <a onclick="go('te-koop')">Aanbod</a>
+                <a onclick="go('verkocht')">Verkocht</a>
+                <a onclick="go('detailing')">Detailing</a>
+                <a onclick="go('reviews')">Reviews</a>
+                <a onclick="go('over-ons')">Over Ons</a>
+                <a onclick="go('contact')">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <img src="data/logo.png" alt="JM Automobielen" class="hero-logo" onerror="this.style.display='none'">
+            <h1>JM <span>Automobielen</span></h1>
+            <p class="hero-tagline">RDW erkend autobedrijf in Hoogkarspel</p>
+            <div class="hero-badges">
+                <span class="hero-badge"><span class="dot"></span> In- &amp; Verkoop</span>
+                <span class="hero-badge"><span class="dot"></span> Professionele Detailing</span>
+                <span class="hero-badge"><span class="dot"></span> RDW Erkend</span>
+            </div>
+            <button class="btn btn-primary" onclick="go('te-koop')">Bekijk Aanbod</button>
+        </div>
+    </section>
+
+    <!-- Te Koop -->
+    <div class="section-alt">
+        <div class="section" id="te-koop">
+            <div class="section-header">
+                <h2>Auto's Te Koop</h2>
+                <div class="divider"></div>
+                <p>Ons huidige aanbod — direct beschikbaar</p>
+            </div>
+            <div id="te-koop-grid" class="grid"></div>
+        </div>
+    </div>
+
+    <!-- Verkocht -->
+    <div class="section" id="verkocht">
+        <div class="section-header">
+            <h2>Recent Verkocht</h2>
+            <div class="divider"></div>
+            <p>Tevreden klanten met hun nieuwe auto</p>
+        </div>
+        <div id="verkocht-grid" class="grid"></div>
+    </div>
+
+    <!-- Detailing -->
+    <div class="section-alt">
+        <div class="section" id="detailing">
+            <div class="section-header">
+                <h2>Detailing</h2>
+                <div class="divider"></div>
+                <p>Polijsten, coaten, interieurreiniging en meer</p>
+            </div>
+            <div id="detailing-grid" class="grid"></div>
+        </div>
+    </div>
+
+    <!-- Reviews -->
+    <div class="section" id="reviews">
+        <div class="section-header">
+            <h2>Klantbeoordelingen</h2>
+            <div class="divider"></div>
+        </div>
+        <div id="reviews-grid" class="grid"></div>
+    </div>
+
+    <!-- Over Ons -->
+    <div class="section-alt">
+        <div class="section" id="over-ons">
+            <div class="section-header">
+                <h2>Over JM Automobielen</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-block">
+                    <h3>Het Bedrijf</h3>
+                    <p>JM Automobielen is een RDW erkend autobedrijf in Hoogkarspel, Noord-Holland. Onder leiding van Jordy hebben we een sterke reputatie opgebouwd door kwaliteit, eerlijkheid en persoonlijke service.</p>
+                    <p>Van jongs af aan is auto's de grootste passie. Dat zie je terug in de aandacht voor elk voertuig dat door onze handen gaat.</p>
+                    <ul class="features-list">
+                        <li>RDW erkend autobedrijf</li>
+                        <li>Persoonlijke aandacht per klant</li>
+                        <li>Transparant en eerlijk</li>
+                    </ul>
+                </div>
+                <div class="about-block">
+                    <h3>Onze Diensten</h3>
+                    <p><strong style="color:var(--cream)">In- &amp; Verkoop</strong> — Betrouwbare occasions, eerlijk geprijsd. Van eerste auto tot upgrade.</p>
+                    <p><strong style="color:var(--cream)">Detailing</strong> — Professioneel polijsten, keramische coatings, interieurreiniging, ozonbehandeling en meer.</p>
+                    <ul class="features-list">
+                        <li>Professioneel polijsten</li>
+                        <li>Keramische coatings (Gyeon)</li>
+                        <li>Interieur deep-clean &amp; extractie</li>
+                        <li>Koplampen restauratie</li>
+                        <li>Lakschade herstel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="section" id="contact">
+        <div class="section-header">
+            <h2>Contact</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div class="contact-icon">&#9742;</div>
+                <h3>Bel of WhatsApp</h3>
+                <p>Neem contact op voor meer info</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">&#9906;</div>
+                <h3>Locatie</h3>
+                <p>Hoogkarspel, Noord-Holland</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">&#128247;</div>
+                <h3>Instagram</h3>
+                <a href="https://instagram.com/jm.automobielen" target="_blank">@jm.automobielen</a>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:2rem;">
+            <a href="https://instagram.com/jm.automobielen" target="_blank" class="btn btn-outline">Volg ons op Instagram</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-brand">JM Automobielen</div>
+        <p>RDW erkend autobedrijf &middot; Hoogkarspel, Nederland</p>
+        <div class="footer-sep"></div>
+        <p>&copy; 2026 JM Automobielen &middot; <a href="https://instagram.com/jm.automobielen" target="_blank">Instagram</a></p>
+    </footer>
+
+    <script>
+    let data = {"last_updated": "2026-03-29T15:30:00Z", "profile": {"name": "JM Automobielen", "bio": "RDW erkend autobedrijf in Hoogkarspel. Voor in/verkoop en licht onderhoud. Polijsten, coaten, interieur...", "followers": 235, "posts_count": 75, "location": "Hoogkarspel, Netherlands"}, "posts": [{"id": "DN8yINDDL0z", "type": "post", "category": "verkocht", "caption": "De polo was nog niet eens klaar en stond nog niet online, tot dat ik een berichtje kreeg van me maat dat ie een autotje zocht met airco, cruise en 5 deuren, het liefst iets van een polo. Toeval bestaat niet maar die stond bij mij. Heel veel veilige kilometers en plezier ermee vriend!", "date": "2025-08-29", "image_url": "https://www.instagram.com/p/DN8yINDDL0z/media/?size=l", "car_info": {"make": "Volkswagen", "model": "Polo", "body_type": "5-door", "features": ["airco", "cruise control"]}, "customer": "friend", "notes": "sold to friend"}, {"id": "DN8dgxaDEJ0", "type": "post", "category": "bedrijf", "caption": "Heel erg blij met de nieuwe spullen precies zoals ik het in gedachten had. Op naar nog meer tevreden klanten.", "date": "2025-08-29", "image_url": "https://www.instagram.com/p/DN8dgxaDEJ0/media/?size=l"}, {"id": "DN3izJuWNqe", "type": "post", "category": "verkocht", "caption": "Polo bijna klaar voor afleveren! Stuurtje stond nog een beetje scheef, dus om hem keurig af te leveren nog even laten uitlijnen bij Laan Banden in Hoogkarspel, super service en fijn contact, tot de volgende keer", "date": "2025-08-27", "image_url": "https://www.instagram.com/p/DN3izJuWNqe/media/?size=l", "car_info": {"make": "Volkswagen", "model": "Polo"}, "service": "wheel_alignment"}, {"id": "DN1DrGJ2ARg", "type": "post", "category": "te_koop", "caption": "Volkswagen Polo 1.0 MPI Trendline 5 deurs (2018) met slechts 89.000km op de teller! Lekker compacte auto met airco, cruise control, en zuinige 1.0 motor. Te koop voor \u20ac8.750", "date": "2025-08-26", "image_url": "https://www.instagram.com/p/DN1DrGJ2ARg/media/?size=l", "car_info": {"make": "Volkswagen", "model": "Polo", "trim": "Trendline", "year": 2018, "engine": "1.0 MPI", "body_type": "5-door", "km": 89000, "price_eur": 8750, "features": ["airco", "cruise control", "fuel efficient"]}}, {"id": "DNvTQBC2KWE", "type": "post", "category": "detailing", "caption": "Peugeot 206+ was toe aan een frisse schoonmaakbeurt \u2014 even lekker door de wasstraat en daarna de binnenkant grondig aangepakt. Stofzuiger erin, dashboard schoon, ramen streeploos", "date": "2025-08-23", "image_url": "https://www.instagram.com/p/DNvTQBC2KWE/media/?size=l", "car_info": {"make": "Peugeot", "model": "206+"}, "services": ["car wash", "interior cleaning", "dashboard cleaning", "window cleaning"]}, {"id": "DNcwIonMX5r", "type": "post", "category": "review", "caption": "Customer review/collaboration", "date": "2025-08-12", "image_url": "https://www.instagram.com/p/DNcwIonMX5r/media/?size=l"}, {"id": "DMqAWm9C7Rm", "type": "post", "category": "te_koop", "caption": "Te koop Ford Focus 1.0 EcoBoost Trend uit 2015 met 156.000km. Nette auto, goed onderhouden. \u20ac7.950", "date": "2025-08-02", "image_url": "https://www.instagram.com/p/DMqAWm9C7Rm/media/?size=l", "car_info": {"make": "Ford", "model": "Focus", "trim": "Trend", "year": 2015, "engine": "1.0 EcoBoost", "km": 156000, "price_eur": 7950, "condition": "well maintained"}}, {"id": "DMnniupMhYL", "type": "post", "category": "detailing", "caption": "Een hele dikke Audi RS3, die van binnen wel wat aandacht kon gebruiken! Auto kwam voor een complete interieur behandeling en een ozon behandeling om weer een neutrale geur te krijgen in de auto. Het leer is nu niet meer glimmend zwart maar mooi mat zoals het hoort! Vloermatten gereinigd tot in de hoekjes...", "date": "2025-07-27", "image_url": "https://www.instagram.com/p/DMnniupMhYL/media/?size=l", "car_info": {"make": "Audi", "model": "RS3"}, "services": ["interior detailing", "ozone treatment", "leather restoration", "floor mat cleaning"]}, {"id": "DMk41Ixi7I2", "type": "post", "category": "verkocht", "caption": "Donderdagavond te koop gezet, vrijdagmiddag verkocht. Renault Twingo", "date": "2025-07-26", "image_url": "https://www.instagram.com/p/DMk41Ixi7I2/media/?size=l", "car_info": {"make": "Renault", "model": "Twingo"}, "notes": "sold within 24 hours"}, {"id": "DMgSqrntdp7", "type": "post", "category": "te_koop", "caption": "Leuke nette Renault Twingo te koop! \u20ac1750", "date": "2025-07-24", "image_url": "https://www.instagram.com/p/DMgSqrntdp7/media/?size=l", "car_info": {"make": "Renault", "model": "Twingo", "price_eur": 1750}}, {"id": "DLpXZcmMeOm", "type": "post", "category": "review", "caption": "Customer review/testimonial", "date": "2025-07-05", "image_url": "https://www.instagram.com/p/DLpXZcmMeOm/media/?size=l"}, {"id": "DLicYD7M8lG", "type": "post", "category": "detailing", "caption": "Detailing work on a car", "date": "2025-07-02", "image_url": "https://www.instagram.com/p/DLicYD7M8lG/media/?size=l"}, {"id": "DLA56wWsvaq", "type": "post", "category": "bedrijf", "caption": "Business/company milestone", "date": "2025-06-22", "image_url": "https://www.instagram.com/p/DLA56wWsvaq/media/?size=l"}, {"id": "DK7I766MOD1", "type": "post", "category": "te_koop", "caption": "Te koop een nette Seat Ibiza uit 2011", "date": "2025-06-15", "image_url": "https://www.instagram.com/p/DK7I766MOD1/media/?size=l", "car_info": {"make": "Seat", "model": "Ibiza", "year": 2011}}, {"id": "DK6xOqmsmGj", "type": "post", "category": "te_koop", "caption": "Te koop bij JM Automobielen deze superleuke nette Lupo uit 2004 met maar 151.766 km! voor \u20ac1500", "date": "2025-06-15", "image_url": "https://www.instagram.com/p/DK6xOqmsmGj/media/?size=l", "car_info": {"make": "Volkswagen", "model": "Lupo", "year": 2004, "km": 151766, "price_eur": 1500}}, {"id": "DKusAGWMeki", "type": "post", "category": "te_koop", "caption": "Te koop in consignatie bij JM Automobielen Hoogkarspel, een zeer nette, goed onderhouden Peugeot", "date": "2025-06-10", "image_url": "https://www.instagram.com/p/DKusAGWMeki/media/?size=l", "car_info": {"make": "Peugeot"}, "type_sale": "consignment"}, {"id": "DKZ63BSsxJy", "type": "post", "category": "verkocht", "caption": "En ook de twingo mag het pad verlaten. Valentijn heeft nog maar net zijn rijbewijs", "date": "2025-06-02", "image_url": "https://www.instagram.com/p/DKZ63BSsxJy/media/?size=l", "car_info": {"make": "Renault", "model": "Twingo"}, "customer": "Valentijn", "notes": "sold to new driver"}, {"id": "DKKuuoasCTX", "type": "post", "category": "verkocht", "caption": "En daar gaat de Seat, verkocht aan Sil, die een grotere auto zocht voor zijn DJ werk", "date": "2025-05-27", "image_url": "https://www.instagram.com/p/DKKuuoasCTX/media/?size=l", "car_info": {"make": "Seat"}, "customer": "Sil", "notes": "sold for DJ work"}, {"id": "DKIaGzwsnMz", "type": "post", "category": "detailing", "caption": "Vorig jaar mijn daily aangepakt, gekocht als een vieze oude golf. Veel krassen, swirls en oud vuil. Begonnen met het kleien van de auto...", "date": "2025-05-26", "image_url": "https://www.instagram.com/p/DKIaGzwsnMz/media/?size=l", "car_info": {"make": "Volkswagen", "model": "Golf"}, "services": ["clay bar treatment", "scratch removal", "swirl removal", "deep cleaning"]}, {"id": "DKAQjTQMKJZ", "type": "post", "category": "te_koop", "caption": "En deze prachtige in nieuwstaat Seat Ibiza 1.2 uit 2011 met maar 49.513 km! 1e eigenaar en dealer onderhouden", "date": "2025-05-23", "image_url": "https://www.instagram.com/p/DKAQjTQMKJZ/media/?size=l", "car_info": {"make": "Seat", "model": "Ibiza", "year": 2011, "engine": "1.2", "km": 49513, "condition": "like new", "owner_history": "first owner, dealer serviced"}}, {"id": "DKAP8flstmV", "type": "post", "category": "te_koop", "caption": "En weer een superleuke kleine franse Twingo te koop! Met maar 107.000 km. Vraagprijs: \u20ac 1750", "date": "2025-05-23", "image_url": "https://www.instagram.com/p/DKAP8flstmV/media/?size=l", "car_info": {"make": "Renault", "model": "Twingo", "km": 107000, "price_eur": 1750}}, {"id": "DJ-P6v5M2eT", "type": "post", "category": "detailing", "caption": "Het lijkt vaak erger dan dat het is! Maar met een beetje geduld en polijst werk is er nog een hoop schade vaak weg te halen", "date": "2025-05-22", "image_url": "https://www.instagram.com/p/DJ-P6v5M2eT/media/?size=l", "services": ["polishing", "scratch removal", "damage repair"]}, {"id": "DJ-NRs-sYml", "type": "post", "category": "detailing", "caption": "Wat een verschil kunnen schone ramen geven, na verschillende...", "date": "2025-05-22", "image_url": "https://www.instagram.com/p/DJ-NRs-sYml/media/?size=l", "services": ["window cleaning"]}, {"id": "DJxLnnOMrcz", "type": "post", "category": "review", "caption": "Customer review/testimonial", "date": null, "image_url": "https://www.instagram.com/p/DJxLnnOMrcz/media/?size=l"}, {"id": "DJw_Mmzsu2F", "type": "post", "category": "detailing", "caption": "Ook voor het polijsten van lampen kun je bij mij terecht! Bij hele erge verweerde koplampen...", "date": "2025-05-17", "image_url": "https://www.instagram.com/p/DJw_Mmzsu2F/media/?size=l", "services": ["headlight polishing", "headlight restoration"]}, {"id": "DJuvxo7MdhV", "type": "post", "category": "detailing", "caption": "Vorig jaar de auto volledig gepolijst en in een menzerna polymeer sealing gezet. Deze bescherming houdt het ongeveer 3/6 maanden vol...", "date": "2025-05-16", "image_url": "https://www.instagram.com/p/DJuvxo7MdhV/media/?size=l", "services": ["full polish", "polymer coating", "menzerna sealing"]}, {"id": "DJutWowsLD0", "type": "post", "category": "reparatie", "caption": "Super mooie Fiesta ST line op de brug", "date": "2025-05-16", "image_url": "https://www.instagram.com/p/DJutWowsLD0/media/?size=l", "car_info": {"make": "Ford", "model": "Fiesta", "trim": "ST line"}, "notes": "on lift for service"}, {"id": "DJusmVzMLNi", "type": "post", "category": "verkocht", "caption": "De eerste verkoop van JM automobielen was vorige week een feit, de auto gaat zijn leven verder in Heerhugowaard bij een beginnend chauffeur", "date": "2025-05-16", "image_url": "https://www.instagram.com/p/DJusmVzMLNi/media/?size=l", "notes": "first sale of JM Automobielen, sold to new driver in Heerhugowaard"}], "categories": {"te_koop": "Cars for sale", "verkocht": "Cars sold", "detailing": "Detailing & polishing services", "reparatie": "Repairs & maintenance", "review": "Customer reviews & testimonials", "bedrijf": "Business updates", "overig": "Other"}, "statistics": {"total_posts": 28, "by_category": {"te_koop": 10, "verkocht": 7, "detailing": 8, "reparatie": 1, "review": 3, "bedrijf": 2}, "date_range": {"oldest": "2025-05-16", "newest": "2025-08-29"}}};
+
+    async function init() {
+        render(); // render immediately with inline data
+        // Then try to fetch fresh data (works on HTTP, silently fails on file://)
+        try {
+            const ctrl = new AbortController();
+            setTimeout(() => ctrl.abort(), 3000);
+            const r = await fetch('data/posts.json', { signal: ctrl.signal });
+            if (r.ok) {
+                const fresh = await r.json();
+                if (fresh.posts && fresh.posts.length > 0) { data = fresh; render(); }
+            }
+        } catch(e) { /* file:// or offline — inline data already rendered */ }
+    }
+
+    function render() {
+        renderGrid('te-koop-grid', 'te_koop', renderCarCard);
+        renderGrid('verkocht-grid', 'verkocht', p => renderCarCard(p, true));
+        renderGrid('detailing-grid', 'detailing', renderDetailCard);
+        renderGrid('reviews-grid', 'review', renderReviewCard);
+    }
+
+    function renderGrid(containerId, category, cardFn) {
+        const el = document.getElementById(containerId);
+        const posts = data.posts.filter(p => p.category === category);
+        if (!posts.length) {
+            const msgs = {
+                te_koop: 'Momenteel geen auto\'s beschikbaar',
+                verkocht: 'Verkoophistorie wordt geladen',
+                detailing: 'Portfolio wordt geladen',
+                review: 'Reviews worden geladen'
+            };
+            el.innerHTML = `<div class="empty-state"><h3>${msgs[category] || 'Geen items'}</h3><p>Volg ons op Instagram voor updates</p></div>`;
+            return;
+        }
+        el.innerHTML = posts.map(cardFn).join('');
+    }
+
+    function renderCarCard(post, sold = false) {
+        const c = post.car_info || {};
+        const title = c.make && c.model ? `${c.make} ${c.model}` : extractTitle(post.caption);
+        const img = post.images?.[0] || post.image_url;
+        const badgeCls = sold ? 'badge-verkocht' : 'badge-te-koop';
+        const badgeTxt = sold ? 'Verkocht' : 'Te Koop';
+
+        return `<div class="car-card">
+            <div class="car-card-img">
+                ${img ? `<img src="${img}" alt="${title}" onerror="this.parentElement.innerHTML='<div class=placeholder-img>Foto</div>'">` : '<div class="placeholder-img">Foto</div>'}
+                <div class="badge ${badgeCls}">${badgeTxt}</div>
+            </div>
+            <div class="car-card-body">
+                <h3>${title}</h3>
+                ${c.plate ? `<span class="plate">${c.plate}</span>` : ''}
+                <div class="specs">
+                    ${post.caption ? truncate(cleanCaption(post.caption), 120) : ''}
+                </div>
+                ${(c.price||c.price_eur) && !sold ? `<div class="price">&euro; ${Number((c.price||c.price_eur)).toLocaleString('nl-NL')}</div>` : ''}
+                ${(c.price||c.price_eur) && sold ? `<div class="price price-sold">&euro; ${Number((c.price||c.price_eur)).toLocaleString('nl-NL')}</div>` : ''}
+                ${post.date ? `<div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.5rem;">${fmtDate(post.date)}</div>` : ''}
+            </div>
+        </div>`;
+    }
+
+    function renderDetailCard(post) {
+        const img = post.images?.[0] || post.image_url;
+        const caption = post.caption || '';
+        const tags = extractTags(caption);
+
+        return `<div class="detail-card">
+            <div class="detail-card-img">
+                ${img ? `<img src="${img}" alt="Detailing" onerror="this.parentElement.innerHTML='<div class=placeholder-img>Foto</div>'">` : '<div class="placeholder-img">Foto</div>'}
+            </div>
+            <div class="detail-card-body">
+                <h3>${extractDetailTitle(caption)}</h3>
+                <p>${truncate(cleanCaption(caption), 140)}</p>
+                ${tags.length ? `<div class="detail-tags">${tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+                ${post.date ? `<div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.6rem;">${fmtDate(post.date)}</div>` : ''}
+            </div>
+        </div>`;
+    }
+
+    function renderReviewCard(post) {
+        return `<div class="review-card">
+            <div class="review-stars">${'&#9733;'.repeat(5)}</div>
+            <p class="review-text">"${truncate(cleanCaption(post.caption || ''), 200)}"</p>
+            ${post.date ? `<p class="review-author">${fmtDate(post.date)}</p>` : ''}
+        </div>`;
+    }
+
+    /* Helpers */
+    function go(id) {
+        document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+        document.querySelector('nav')?.classList.remove('open');
+    }
+
+    function truncate(s, n) { return s.length > n ? s.slice(0, n) + '...' : s; }
+
+    function fmtDate(d) {
+        try { return new Date(d).toLocaleDateString('nl-NL', {year:'numeric',month:'long',day:'numeric'}); }
+        catch(e) { return d; }
+    }
+
+    function cleanCaption(c) {
+        return c.replace(/#\w+/g, '').replace(/\n+/g, ' ').replace(/\s+/g, ' ').trim();
+    }
+
+    function extractTitle(caption) {
+        if (!caption) return 'Voertuig';
+        const brands = ['Volkswagen','VW','Golf','Polo','Lupo','Fox','Audi','BMW','Mercedes','Opel','Seat','Cupra','Peugeot','Renault','Citroen','Dacia','Fiat','Toyota','Mazda','Mini','Skoda','Ford','Hyundai','Kia','Suzuki','Twingo','Corsa','Ibiza','Leon','Sandero'];
+        const found = brands.filter(b => caption.toLowerCase().includes(b.toLowerCase()));
+        return found.length ? found.join(' ') : 'Voertuig';
+    }
+
+    function extractDetailTitle(caption) {
+        if (!caption) return 'Detailing';
+        const c = caption.toLowerCase();
+        if (c.includes('interieur')) return 'Interieur Detailing';
+        if (c.includes('polijst')) return 'Polijstbeurt';
+        if (c.includes('coating')) return 'Keramische Coating';
+        if (c.includes('koplamp') || c.includes('lamp')) return 'Koplampen Restauratie';
+        if (c.includes('extractie') || c.includes('stoel')) return 'Interieur Extractie';
+        if (c.includes('ozon')) return 'Ozonbehandeling';
+        if (c.includes('schade') || c.includes('kras')) return 'Lakschade Herstel';
+        return 'Detailing';
+    }
+
+    function extractTags(caption) {
+        const tags = [];
+        const c = caption.toLowerCase();
+        if (c.includes('polijst') || c.includes('polish')) tags.push('Polijsten');
+        if (c.includes('coating') || c.includes('gyeon')) tags.push('Coating');
+        if (c.includes('interieur') || c.includes('extractie')) tags.push('Interieur');
+        if (c.includes('menzerna')) tags.push('Menzerna');
+        if (c.includes('gyeon')) tags.push('Gyeon');
+        if (c.includes('wax') || c.includes('sealing')) tags.push('Sealing');
+        return tags.slice(0, 4);
+    }
+
+    window.addEventListener('load', init);
+    </script>
+</body>
+</html>
