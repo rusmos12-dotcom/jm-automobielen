@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-29T15:30:00Z",
+  "last_updated": "2026-03-29T15:15:19.858406Z",
   "profile": {
     "name": "JM Automobielen",
     "bio": "RDW erkend autobedrijf in Hoogkarspel. Voor in/verkoop en licht onderhoud. Polijsten, coaten, interieur...",
@@ -19,7 +19,10 @@
         "make": "Volkswagen",
         "model": "Polo",
         "body_type": "5-door",
-        "features": ["airco", "cruise control"]
+        "features": [
+          "airco",
+          "cruise control"
+        ]
       },
       "customer": "friend",
       "notes": "sold to friend"
@@ -61,7 +64,11 @@
         "body_type": "5-door",
         "km": 89000,
         "price_eur": 8750,
-        "features": ["airco", "cruise control", "fuel efficient"]
+        "features": [
+          "airco",
+          "cruise control",
+          "fuel efficient"
+        ]
       }
     },
     {
@@ -75,7 +82,12 @@
         "make": "Peugeot",
         "model": "206+"
       },
-      "services": ["car wash", "interior cleaning", "dashboard cleaning", "window cleaning"]
+      "services": [
+        "car wash",
+        "interior cleaning",
+        "dashboard cleaning",
+        "window cleaning"
+      ]
     },
     {
       "id": "DNcwIonMX5r",
@@ -114,7 +126,12 @@
         "make": "Audi",
         "model": "RS3"
       },
-      "services": ["interior detailing", "ozone treatment", "leather restoration", "floor mat cleaning"]
+      "services": [
+        "interior detailing",
+        "ozone treatment",
+        "leather restoration",
+        "floor mat cleaning"
+      ]
     },
     {
       "id": "DMk41Ixi7I2",
@@ -244,7 +261,12 @@
         "make": "Volkswagen",
         "model": "Golf"
       },
-      "services": ["clay bar treatment", "scratch removal", "swirl removal", "deep cleaning"]
+      "services": [
+        "clay bar treatment",
+        "scratch removal",
+        "swirl removal",
+        "deep cleaning"
+      ]
     },
     {
       "id": "DKAQjTQMKJZ",
@@ -284,7 +306,11 @@
       "caption": "Het lijkt vaak erger dan dat het is! Maar met een beetje geduld en polijst werk is er nog een hoop schade vaak weg te halen",
       "date": "2025-05-22",
       "image_url": "https://www.instagram.com/p/DJ-P6v5M2eT/media/?size=l",
-      "services": ["polishing", "scratch removal", "damage repair"]
+      "services": [
+        "polishing",
+        "scratch removal",
+        "damage repair"
+      ]
     },
     {
       "id": "DJ-NRs-sYml",
@@ -293,7 +319,9 @@
       "caption": "Wat een verschil kunnen schone ramen geven, na verschillende...",
       "date": "2025-05-22",
       "image_url": "https://www.instagram.com/p/DJ-NRs-sYml/media/?size=l",
-      "services": ["window cleaning"]
+      "services": [
+        "window cleaning"
+      ]
     },
     {
       "id": "DJxLnnOMrcz",
@@ -310,7 +338,10 @@
       "caption": "Ook voor het polijsten van lampen kun je bij mij terecht! Bij hele erge verweerde koplampen...",
       "date": "2025-05-17",
       "image_url": "https://www.instagram.com/p/DJw_Mmzsu2F/media/?size=l",
-      "services": ["headlight polishing", "headlight restoration"]
+      "services": [
+        "headlight polishing",
+        "headlight restoration"
+      ]
     },
     {
       "id": "DJuvxo7MdhV",
@@ -319,7 +350,11 @@
       "caption": "Vorig jaar de auto volledig gepolijst en in een menzerna polymeer sealing gezet. Deze bescherming houdt het ongeveer 3/6 maanden vol...",
       "date": "2025-05-16",
       "image_url": "https://www.instagram.com/p/DJuvxo7MdhV/media/?size=l",
-      "services": ["full polish", "polymer coating", "menzerna sealing"]
+      "services": [
+        "full polish",
+        "polymer coating",
+        "menzerna sealing"
+      ]
     },
     {
       "id": "DJutWowsLD0",
