@@ -12,7 +12,7 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 10
 
     permissions:
       contents: write
@@ -26,23 +26,13 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          playwright install chromium
-
       - name: Run Instagram scraper
-        run: |
-          python scraper/scrape.py
-        env:
-          INSTAGRAM_USERNAME: ${{ secrets.INSTAGRAM_USERNAME }}
-          INSTAGRAM_PASSWORD: ${{ secrets.INSTAGRAM_PASSWORD }}
+        run: python scraper/scrape.py
 
       - name: Check for changes
         id: verify-changed-files
         run: |
-          if git diff --quiet data/posts.json; then
+          if git diff --quiet && git diff --cached --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -53,7 +43,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Instagram Sync Bot"
-          git add data/posts.json
+          git add data/posts.json data/images/
           git commit -m "chore: sync Instagram posts [skip ci]"
           git push
 
@@ -61,7 +51,7 @@ jobs:
         run: |
           echo "✅ Instagram sync completed"
           if [ "${{ steps.verify-changed-files.outputs.changed }}" == "true" ]; then
-            echo "📝 Updated posts.json"
+            echo "📝 Updated posts.json and images"
           else
             echo "ℹ️ No changes to commit"
           fi

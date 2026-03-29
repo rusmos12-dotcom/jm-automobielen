@@ -851,7 +851,7 @@
     function renderCarCard(post, sold = false) {
         const c = post.car_info || {};
         const title = c.make && c.model ? `${c.make} ${c.model}` : extractTitle(post.caption);
-        const img = post.images?.[0] || post.image_url;
+        const img = post.local_image || post.images?.[0] || post.image_url;
         const badgeCls = sold ? 'badge-verkocht' : 'badge-te-koop';
         const badgeTxt = sold ? 'Verkocht' : 'Te Koop';
 
@@ -874,7 +874,7 @@
     }
 
     function renderDetailCard(post) {
-        const img = post.images?.[0] || post.image_url;
+        const img = post.local_image || post.images?.[0] || post.image_url;
         const caption = post.caption || '';
         const tags = extractTags(caption);
 

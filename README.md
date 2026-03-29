@@ -5,9 +5,10 @@ Automated website for JM Automobielen that syncs with their Instagram profile.
 ## How it works
 
 1. A GitHub Actions workflow runs every hour
-2. It scrapes the public Instagram profile `@jm.automobielen`
+2. It scrapes the public Instagram profile `@jm.automobielen` (no login required)
 3. Posts are auto-categorized (Te Koop, Verkocht, Detailing, Reviews, etc.)
-4. The static website reads from `data/posts.json` and displays everything
+4. Images are downloaded locally to avoid hotlink blocking
+5. The static website reads from `data/posts.json` and displays everything
 
 ## Setup
 
@@ -18,17 +19,18 @@ Automated website for JM Automobielen that syncs with their Instagram profile.
 ## Manual scraper run
 
 ```bash
-pip install playwright
-playwright install chromium
 python scraper/scrape.py
 ```
+
+No external dependencies needed — uses only Python standard library.
 
 ## Project structure
 
 ```
 index.html              → Main website (single-file HTML/CSS/JS)
 data/posts.json         → Auto-generated data from Instagram
+data/images/            → Downloaded post images
 data/logo.png           → Company logo
-scraper/scrape.py       → Instagram scraper (Playwright)
+scraper/scrape.py       → Instagram scraper (lightweight, no browser needed)
 .github/workflows/sync.yml → Hourly automation
 ```

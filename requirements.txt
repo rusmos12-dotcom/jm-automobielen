@@ -1,1 +1,2 @@
-playwright==1.40.0
+# No external dependencies required
+# The scraper uses only Python standard library (urllib, json, re)
